@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobilityDay.Views.SessionPage">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Speakers" Icon="speakers.png" Command="{Binding NavigateToSpeakersCommand}" />
+  </ContentPage.ToolbarItems>
+  <ScrollView>
+    <StackLayout>
+      <Label Text="{Binding Session.Title}" FontSize="42" LineBreakMode="TailTruncation"/>
+      <Label Text="{Binding Session.StartDate, StringFormat='From: {0:g}'}"/>
+      <Label Text="{Binding Session.EndDate, StringFormat='To: {0:g}'}"/>
+      <Label Text="{Binding Session.Description}"/>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

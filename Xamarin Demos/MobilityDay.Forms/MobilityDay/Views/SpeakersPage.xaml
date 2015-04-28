@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:MobilityDay.Converters;assembly=MobilityDay"
+             xmlns:behaviors="clr-namespace:MobilityDay.Behaviors;assembly=MobilityDay"
+             x:Class="MobilityDay.Views.SpeakersPage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <converters:ImageBase64ToSourceConverter x:Key="ImageBase64ToSourceConverter"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Label Grid.Row="0" Text="{Binding Session.Title}" FontSize="42" LineBreakMode="TailTruncation"/>
+    <ListView Grid.Row="1" ItemsSource="{Binding Session.Speakers}" behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding OpenSpeakerWebsiteCommand}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ImageCell
+            ImageSource="{Binding Image, Converter={StaticResource ImageBase64ToSourceConverter}}"
+            Text="{Binding FullName}"
+            Detail="{Binding Description}"/>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </Grid>
+</ContentPage>

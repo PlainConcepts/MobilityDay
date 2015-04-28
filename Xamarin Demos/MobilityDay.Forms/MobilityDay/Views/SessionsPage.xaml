@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:MobilityDay.Behaviors;assembly=MobilityDay"
+             xmlns:converters="clr-namespace:MobilityDay.Converters;assembly=MobilityDay"
+             x:Class="MobilityDay.Views.SessionsPage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <converters:ImageBase64ToSourceConverter x:Key="ImageBase64ToSourceConverter"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ListView ItemsSource="{Binding Sessions}"
+            behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding NavigateToDetailCommand}">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ImageCell 
+          ImageSource="{Binding MainSpeaker.Image, Converter={StaticResource ImageBase64ToSourceConverter}}"
+          Text="{Binding Title}"
+          Detail="{Binding Description}"/>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+</ContentPage>
