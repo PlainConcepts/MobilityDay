@@ -7,7 +7,7 @@
         <!--class Prefix:identifier View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="SessionsView" sceneMemberID="viewController" storyboardIdentifier="SessionsView">
+                <viewController id="vXZ-lx-hvc" customClass="SessionsView" sceneMemberID="viewController" storyboardIdentifier="SessionsView" title="Agenda">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3"/>
                         <viewControllerLayoutGuide type="bottom" id="4"/>
@@ -18,38 +18,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="17" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="26" style="IBUITableViewCellStyleSubtitle" textLabel="40" detailTextLabel="41" customClass="TableViewCell" imageView="82">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="26" id="27">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="40">
-                                                    <rect key="frame" x="74" y="4" width="34" height="21.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="41">
-                                                    <rect key="frame" x="74" y="25.5" width="43" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Avatar.png" id="82">
-                                                    <rect key="frame" x="15" y="0.0" width="44" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                                <prototypes/>
                             </tableView>
                         </subviews>
                     </view>
@@ -63,7 +34,7 @@
         </scene>
         <scene sceneID="97">
             <objects>
-                <viewController id="98" sceneMemberID="viewController" customClass="SessionView" storyboardIdentifier="SessionView">
+                <viewController id="98" sceneMemberID="viewController" customClass="SessionView" storyboardIdentifier="SessionView" title="Sesión">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="95"/>
                         <viewControllerLayoutGuide type="bottom" id="96"/>
@@ -73,15 +44,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Foo" lineBreakMode="tailTruncation" minimumFontSize="10" id="102" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" textAlignment="center">
-                                <rect key="frame" x="139" y="274" width="42" height="21"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" id="109" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" image="SessionBanner.png">
+                                <rect key="frame" x="0.0" y="65" width="320" height="160"/>
+                            </imageView>
                         </subviews>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="100" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,5 +65,6 @@
         <image name="Default-568h.png" width="640" height="1136"/>
         <image name="KzwT77TX.png" width="256" height="256"/>
         <image name="Avatar.png" width="256" height="256"/>
+        <image name="SessionBanner.png" width="1920" height="685"/>
     </resources>
 </document>

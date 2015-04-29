@@ -145,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Entitlements.plist" />
+    <BundleResource Include="Resources\SessionBanner.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\MobilityDay.Core\MobilityDay.Core.csproj">
