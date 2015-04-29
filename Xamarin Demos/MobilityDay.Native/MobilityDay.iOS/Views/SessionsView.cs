@@ -23,7 +23,7 @@ namespace MobilityDay.iOS.Views
                 TableView, 
                 UITableViewCellStyle.Subtitle, 
                 new NSString("CellId"),
-                "TitleText Title; DetailText Description");
+                "TitleText Title; DetailText SessionSubTitle()");
             TableView.Source = _tableViewSource;
             TableView.ReloadData();
 
