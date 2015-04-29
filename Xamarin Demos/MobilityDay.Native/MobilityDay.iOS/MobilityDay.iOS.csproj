@@ -144,8 +144,10 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="..\..\Assets\SessionBanner.png">
+      <Link>Resources\SessionBanner.png</Link>
+    </BundleResource>
     <Content Include="Entitlements.plist" />
-    <BundleResource Include="Resources\SessionBanner.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\MobilityDay.Core\MobilityDay.Core.csproj">
