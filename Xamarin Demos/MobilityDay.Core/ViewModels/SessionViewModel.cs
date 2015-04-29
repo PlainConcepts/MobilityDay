@@ -1,4 +1,6 @@
-﻿using Cirrious.MvvmCross.ViewModels;
+﻿using Cirrious.CrossCore;
+using Cirrious.MvvmCross.Plugins.WebBrowser;
+using Cirrious.MvvmCross.ViewModels;
 using MobilityDay.Core.Models;
 using MobilityDay.Core.Services;
 
@@ -15,12 +17,11 @@ namespace MobilityDay.Core.ViewModels
             get { return _session; }
             set { SetProperty(ref _session, value); }
         }
-
-        public IMvxCommand NavigateToSpeakersCommand
+        public IMvxCommand OpenSpeakerWebsiteCommand
         {
             get
             {
-                return new MvxCommand(NavigateToSpeakers);
+                return new MvxCommand<Speaker>(OpenSpeakerWebsite);
             }
         }
 
@@ -34,9 +35,9 @@ namespace MobilityDay.Core.ViewModels
             Session = await _scheduleService.FindSessionById(sessionId);
         }
 
-        private void NavigateToSpeakers()
+        private void OpenSpeakerWebsite(Speaker speaker)
         {
-            ShowViewModel<SpeakersViewModel>(new { sessionId = Session.Id });
+            Mvx.Resolve<IMvxWebBrowserTask>().ShowWebPage(speaker.Website);
         }
     }
 }
