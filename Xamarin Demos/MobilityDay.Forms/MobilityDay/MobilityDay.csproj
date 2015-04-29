@@ -36,6 +36,8 @@
   <ItemGroup>
     <Compile Include="Behaviors\ItemTappedCommandListView.cs" />
     <Compile Include="Converters\ImageBase64ToSourceConverter.cs" />
+    <Compile Include="Converters\NativeSessionSubtitleConverter.cs" />
+    <Compile Include="Converters\NativeSessionDateTimeConverter.cs" />
     <Compile Include="FormsPresenter\IMvxFormsPresenter.cs" />
     <Compile Include="FormsPresenter\MvxFormsMainThreadDispatcher.cs" />
     <Compile Include="FormsPresenter\MvxFormsViewModelViewTypeFinder.cs" />

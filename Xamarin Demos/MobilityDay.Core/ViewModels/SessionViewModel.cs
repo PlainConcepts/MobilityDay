@@ -15,6 +15,7 @@ namespace MobilityDay.Core.ViewModels
             get { return _session; }
             set { SetProperty(ref _session, value); }
         }
+
         public IMvxCommand NavigateToSpeakersCommand
         {
             get

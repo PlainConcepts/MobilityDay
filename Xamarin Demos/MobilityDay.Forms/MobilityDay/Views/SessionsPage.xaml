@@ -7,6 +7,7 @@
   <ContentPage.Resources>
     <ResourceDictionary>
       <converters:ImageBase64ToSourceConverter x:Key="ImageBase64ToSourceConverter"/>
+      <converters:NativeSessionSubtitleConverter x:Key="SessionSubtitleConverter"/>
     </ResourceDictionary>
   </ContentPage.Resources>
   <ListView ItemsSource="{Binding Sessions}"
@@ -16,7 +17,7 @@
         <ImageCell 
           ImageSource="{Binding MainSpeaker.Image, Converter={StaticResource ImageBase64ToSourceConverter}}"
           Text="{Binding Title}"
-          Detail="{Binding Description}"/>
+          Detail="{Binding Converter={StaticResource SessionSubtitleConverter}}"/>
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>
