@@ -1,4 +1,5 @@
 using Cirrious.MvvmCross.Touch.Platform;
+using Cirrious.MvvmCross.Touch.Views;
 using Cirrious.MvvmCross.Touch.Views.Presenters;
 using Cirrious.MvvmCross.ViewModels;
 using MobilityDay.Core;
@@ -19,6 +20,11 @@ namespace MobilityDay.iOS
         protected override IMvxApplication CreateApp()
         {
             return new App();
+        }
+
+        protected override IMvxTouchViewsContainer CreateTouchViewsContainer()
+        {
+            return new StoryboardBasedContainer();
         }
     }
 }
