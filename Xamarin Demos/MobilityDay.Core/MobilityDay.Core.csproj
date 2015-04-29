@@ -45,7 +45,6 @@
     <Compile Include="Services\ScheduleService.cs" />
     <Compile Include="ViewModels\SessionsViewModel.cs" />
     <Compile Include="ViewModels\SessionViewModel.cs" />
-    <Compile Include="ViewModels\SpeakersViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
