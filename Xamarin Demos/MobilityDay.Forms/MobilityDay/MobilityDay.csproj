@@ -35,6 +35,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Behaviors\ItemTappedCommandListView.cs" />
+    <Compile Include="Controls\SpeakerControl.xaml.cs">
+      <DependentUpon>SpeakerControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\ImageBase64ToSourceConverter.cs" />
     <Compile Include="Converters\NativeSessionSubtitleConverter.cs" />
     <Compile Include="Converters\NativeSessionDateTimeConverter.cs" />
@@ -109,6 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SessionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\SpeakerControl.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

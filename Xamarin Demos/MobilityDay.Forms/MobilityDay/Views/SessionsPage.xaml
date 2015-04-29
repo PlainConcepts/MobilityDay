@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:MobilityDay.Behaviors;assembly=MobilityDay"
              xmlns:converters="clr-namespace:MobilityDay.Converters;assembly=MobilityDay"
-             x:Class="MobilityDay.Views.SessionsPage">
+             x:Class="MobilityDay.Views.SessionsPage"
+             Title="Agenda"
+             BackgroundColor="White">
   <ContentPage.Resources>
     <ResourceDictionary>
       <converters:ImageBase64ToSourceConverter x:Key="ImageBase64ToSourceConverter"/>
@@ -17,7 +19,9 @@
         <ImageCell 
           ImageSource="{Binding MainSpeaker.Image, Converter={StaticResource ImageBase64ToSourceConverter}}"
           Text="{Binding Title}"
-          Detail="{Binding Converter={StaticResource SessionSubtitleConverter}}"/>
+          TextColor="#00BCE5"
+          Detail="{Binding Converter={StaticResource SessionSubtitleConverter}}"
+          DetailColor="#6E6E6E"/>
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>

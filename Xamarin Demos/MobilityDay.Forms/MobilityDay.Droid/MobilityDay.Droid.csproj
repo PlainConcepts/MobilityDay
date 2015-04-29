@@ -133,8 +133,8 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="..\Assets\speakers.png">
-      <Link>Resources\drawable\speakers.png</Link>
+    <AndroidResource Include="..\..\Assets\SessionBanner.png">
+      <Link>Resources\drawable\SessionBanner.png</Link>
     </AndroidResource>
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>

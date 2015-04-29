@@ -2,20 +2,43 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:MobilityDay.Converters;assembly=MobilityDay"
-             x:Class="MobilityDay.Views.SessionPage">
+             xmlns:controls="clr-namespace:MobilityDay.Controls;assembly=MobilityDay"
+             x:Class="MobilityDay.Views.SessionPage"
+             Title="Sesión"
+             BackgroundColor="White">
   <ContentPage.Resources>
     <ResourceDictionary>
       <converters:NativeSessionDateTimeConverter x:Key="SessionDateTimeConverter"/>
     </ResourceDictionary>
   </ContentPage.Resources>
-  <ContentPage.ToolbarItems>
-    <ToolbarItem Text="Speakers" Icon="speakers.png" Command="{Binding NavigateToSpeakersCommand}" />
-  </ContentPage.ToolbarItems>
   <ScrollView>
-    <StackLayout>
-      <Label Text="{Binding Session.Title}" FontSize="42" LineBreakMode="TailTruncation"/>
-      <Label Text="{Binding Session, Converter={StaticResource SessionDateTimeConverter}, ConverterParameter='Long'}"/>
-      <Label Text="{Binding Session.Description}"/>
-    </StackLayout>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <Image Source="SessionBanner.png" Aspect="AspectFill">
+        <Image.HeightRequest>
+          <OnPlatform x:TypeArguments="x:Double"
+            iOS="160"
+            Android="240"
+            WinPhone="240" />
+        </Image.HeightRequest>
+      </Image>
+
+      <Label HorizontalOptions="End" XAlign="End" Text="{Binding Session.Title}" FontSize="24" LineBreakMode="WordWrap" TextColor="White"/>
+      <Label VerticalOptions="End" HorizontalOptions="End" Text="{Binding Session, Converter={StaticResource SessionDateTimeConverter}, ConverterParameter='Long'}" TextColor="#202020"/>
+
+      <StackLayout x:Name="SessionDetail" Grid.Row="1">
+        <Label Text="{Binding Session.Description}" TextColor="#6E6E6E"/>
+        
+        <controls:SpeakerControl Model="{Binding FirstSpeaker}" TappedCommand="{Binding BindingContext.OpenSpeakerWebsiteCommand, Source={x:Reference SessionDetail}}"/>
+
+        <controls:SpeakerControl Model="{Binding SecondSpeaker}" TappedCommand="{Binding BindingContext.OpenSpeakerWebsiteCommand, Source={x:Reference SessionDetail}}"
+                                 IsVisible="{Binding BindingContext.HasTwoSpeakers, Source={x:Reference SessionDetail}}"/>
+      </StackLayout>
+    </Grid>
   </ScrollView>
 </ContentPage>
