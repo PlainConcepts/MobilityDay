@@ -49,9 +49,6 @@
     <Compile Include="FormsPresenter\MvxFormsViewDispatcher.cs" />
     <Compile Include="FormsPresenter\MvxFormsViewsContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\SpeakersPage.xaml.cs">
-      <DependentUpon>SpeakersPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\SessionPage.xaml.cs">
       <DependentUpon>SessionPage.xaml</DependentUpon>
     </Compile>
@@ -112,12 +109,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\SessionPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\SpeakersPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
