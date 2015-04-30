@@ -38,7 +38,6 @@
     <Compile Include="Controls\SpeakerControl.xaml.cs">
       <DependentUpon>SpeakerControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Converters\ImageBase64ToSourceConverter.cs" />
     <Compile Include="Converters\NativeSessionSubtitleConverter.cs" />
     <Compile Include="Converters\NativeSessionDateTimeConverter.cs" />
     <Compile Include="FormsPresenter\IMvxFormsPresenter.cs" />

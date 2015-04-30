@@ -137,6 +137,7 @@
       <Link>Resources\drawable\SessionBanner.png</Link>
     </AndroidResource>
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\MobilityDay.Core\MobilityDay.Core.csproj">

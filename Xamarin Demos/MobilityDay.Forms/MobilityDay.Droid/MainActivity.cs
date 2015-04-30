@@ -7,7 +7,7 @@ using Xamarin.Forms.Platform.Android;
 
 namespace MobilityDay.Droid
 {
-    [Activity(Label = "MobilityDay", Icon = "@drawable/icon", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "MobilityDay", Icon = "@drawable/icon", Theme = "@style/AppTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsApplicationActivity
     {
         private static FormsSetup _setup;

@@ -8,7 +8,6 @@
              BackgroundColor="White">
   <ContentPage.Resources>
     <ResourceDictionary>
-      <converters:ImageBase64ToSourceConverter x:Key="ImageBase64ToSourceConverter"/>
       <converters:NativeSessionSubtitleConverter x:Key="SessionSubtitleConverter"/>
     </ResourceDictionary>
   </ContentPage.Resources>
@@ -17,7 +16,7 @@
     <ListView.ItemTemplate>
       <DataTemplate>
         <ImageCell 
-          ImageSource="{Binding MainSpeaker.Image, Converter={StaticResource ImageBase64ToSourceConverter}}"
+          ImageSource="{Binding MainSpeaker.ImageUrl}"
           Text="{Binding Title}"
           TextColor="#00BCE5"
           Detail="{Binding Converter={StaticResource SessionSubtitleConverter}}"

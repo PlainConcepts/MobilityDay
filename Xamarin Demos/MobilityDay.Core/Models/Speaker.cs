@@ -8,6 +8,8 @@
 
         public string Image { get; set; }
 
+        public string ImageUrl { get; set; }
+
         public string Website { get; set; }
     }
 }

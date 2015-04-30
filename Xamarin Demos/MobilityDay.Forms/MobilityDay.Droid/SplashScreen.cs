@@ -8,6 +8,7 @@ namespace MobilityDay.Droid
     [Activity(
 		Label = "MobilityDay.Droid.Forms"
 		, MainLauncher = true
+        , Theme = "@style/AppTheme"
 		, Icon = "@drawable/icon"
 		, NoHistory = true
 		, ScreenOrientation = ScreenOrientation.Portrait)]
