@@ -20,10 +20,10 @@ namespace MobilityDay.iOS.Views
         public override void ViewDidLoad()
         {
             _tableViewSource = new MvxStandardTableViewSource(
-                TableView, 
-                UITableViewCellStyle.Subtitle, 
+                TableView,
+                UITableViewCellStyle.Subtitle,
                 new NSString("CellId"),
-                "TitleText Title; DetailText SessionSubTitle()");
+                "ImageUrl MainSpeaker.Image; TitleText Title; DetailText SessionSubTitle()");
             TableView.Source = _tableViewSource;
             TableView.ReloadData();
 
