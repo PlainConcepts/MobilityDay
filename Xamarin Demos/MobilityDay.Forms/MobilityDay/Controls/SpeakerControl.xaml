@@ -21,7 +21,8 @@
       <Label Text="{Binding Model.Description, Source={x:Reference Speaker}}" TextColor="#6E6E6E">
         <Label.FontSize>
           <OnPlatform x:TypeArguments="x:Double"
-            iOS="12"/>
+                      WinPhone="18"
+                      iOS="12"/>
         </Label.FontSize>
       </Label>
     </StackLayout>

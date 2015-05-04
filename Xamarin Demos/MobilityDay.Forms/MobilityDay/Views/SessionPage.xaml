@@ -33,7 +33,7 @@
 
       <StackLayout x:Name="SessionDetail" Grid.Row="1">
         <Label Text="{Binding Session.Description}" TextColor="#6E6E6E"/>
-        
+
         <controls:SpeakerControl Model="{Binding FirstSpeaker}" TappedCommand="{Binding BindingContext.OpenSpeakerWebsiteCommand, Source={x:Reference SessionDetail}}"/>
 
         <controls:SpeakerControl Model="{Binding SecondSpeaker}" TappedCommand="{Binding BindingContext.OpenSpeakerWebsiteCommand, Source={x:Reference SessionDetail}}"
