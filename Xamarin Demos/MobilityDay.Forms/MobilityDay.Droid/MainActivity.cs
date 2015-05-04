@@ -18,7 +18,6 @@ namespace MobilityDay.Droid
 
             Forms.Init(this, bundle);
             var mvxFormsApp = new MvxFormsApp();
-            LoadApplication(mvxFormsApp);
 
             if (_setup == null)
             {
@@ -29,6 +28,8 @@ namespace MobilityDay.Droid
             {
                 _setup.ChangeFormsApp(mvxFormsApp);
             }
+
+            LoadApplication(mvxFormsApp);
         }
     }
 }

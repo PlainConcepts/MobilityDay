@@ -16,10 +16,11 @@ namespace MobilityDay.iOS
         {
             Forms.Init();
             var mvxFormsApp = new MvxFormsApp();
-            LoadApplication(mvxFormsApp);
 
             var setup = new FormsSetup(mvxFormsApp, typeof(AppDelegate));
             setup.Initialize();
+
+            LoadApplication(mvxFormsApp);
 
             return base.FinishedLaunching(app, options);
         }

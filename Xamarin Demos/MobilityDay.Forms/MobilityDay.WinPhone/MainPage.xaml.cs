@@ -9,6 +9,7 @@ namespace MobilityDay.WinPhone
     {
         public MainPage()
         {
+            InitializeComponent();
             SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
 
             Forms.Init();
@@ -16,6 +17,7 @@ namespace MobilityDay.WinPhone
 
             var setup = new FormsSetup(mvxFormsApp, typeof(MainPage));
             setup.Initialize();
+
             LoadApplication(mvxFormsApp);
         }
     }
