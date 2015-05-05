@@ -126,6 +126,9 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\splash_screen.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -139,6 +142,7 @@
     </AndroidResource>
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable\splash_screen.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\MobilityDay.Core\MobilityDay.Core.csproj">

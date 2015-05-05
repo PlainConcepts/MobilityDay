@@ -9,29 +9,55 @@
   <ContentPage.Resources>
     <ResourceDictionary>
       <converters:NativeSessionDateTimeConverter x:Key="SessionDateTimeConverter"/>
+      <OnPlatform x:TypeArguments="Thickness" x:Key="PageMargin">
+        <OnPlatform.WinPhone>
+          <Thickness>12,0</Thickness>
+        </OnPlatform.WinPhone>
+        <OnPlatform.Android>
+          <Thickness>12,0</Thickness>
+        </OnPlatform.Android>
+        <OnPlatform.iOS>
+          <Thickness>12,0</Thickness>
+        </OnPlatform.iOS>
+      </OnPlatform>
     </ResourceDictionary>
   </ContentPage.Resources>
   <ScrollView>
     <Grid>
       <Grid.RowDefinitions>
-        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="12"/>
         <RowDefinition Height="Auto"/>
         <RowDefinition Height="Auto"/>
       </Grid.RowDefinitions>
 
-      <Image Source="SessionBanner.png" Aspect="AspectFill">
+      <Image Grid.RowSpan="2" Source="SessionBanner.png" Aspect="AspectFill">
         <Image.HeightRequest>
           <OnPlatform x:TypeArguments="x:Double"
-            iOS="160"
+            iOS="240"
             Android="240"
-            WinPhone="240" />
+            WinPhone="290" />
         </Image.HeightRequest>
       </Image>
 
-      <Label HorizontalOptions="End" XAlign="End" Text="{Binding Session.Title}" FontSize="24" LineBreakMode="WordWrap" TextColor="White"/>
-      <Label VerticalOptions="End" HorizontalOptions="End" Text="{Binding Session, Converter={StaticResource SessionDateTimeConverter}, ConverterParameter='Long'}" TextColor="#202020"/>
+      <Grid Grid.Row="1" Padding="12,0">
+        <Label HorizontalOptions="End" XAlign="End" Text="{Binding Session.Title}" FontSize="24" LineBreakMode="WordWrap" TextColor="White"/>
+        <Label VerticalOptions="End" HorizontalOptions="End" Text="{Binding Session, Converter={StaticResource SessionDateTimeConverter}, ConverterParameter='Long'}" TextColor="#202020"/>
+      </Grid>
 
-      <StackLayout x:Name="SessionDetail" Grid.Row="1">
+      <StackLayout x:Name="SessionDetail" Grid.Row="2">
+        <StackLayout.Padding>
+          <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.WinPhone>
+              <Thickness>24,12</Thickness>
+            </OnPlatform.WinPhone>
+            <OnPlatform.Android>
+              <Thickness>12</Thickness>
+            </OnPlatform.Android>
+            <OnPlatform.iOS>
+              <Thickness>12</Thickness>
+            </OnPlatform.iOS>
+          </OnPlatform>
+        </StackLayout.Padding>
         <Label Text="{Binding Session.Description}" TextColor="#6E6E6E"/>
 
         <controls:SpeakerControl Model="{Binding FirstSpeaker}" TappedCommand="{Binding BindingContext.OpenSpeakerWebsiteCommand, Source={x:Reference SessionDetail}}"/>

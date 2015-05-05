@@ -4,6 +4,7 @@
              xmlns:behaviors="clr-namespace:MobilityDay.Behaviors;assembly=MobilityDay"
              xmlns:converters="clr-namespace:MobilityDay.Converters;assembly=MobilityDay"
              x:Class="MobilityDay.Views.SessionsPage"
+             x:Name="ContentPage"
              Title="Agenda"
              BackgroundColor="White">
   <ContentPage.Resources>
@@ -11,17 +12,40 @@
       <converters:NativeSessionSubtitleConverter x:Key="SessionSubtitleConverter"/>
     </ResourceDictionary>
   </ContentPage.Resources>
-  <ListView ItemsSource="{Binding Sessions}"
-            behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding NavigateToDetailCommand}">
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ImageCell 
-          ImageSource="{Binding MainSpeaker.ImageUrl}"
-          Text="{Binding Title}"
-          TextColor="#00BCE5"
-          Detail="{Binding Converter={StaticResource SessionSubtitleConverter}}"
-          DetailColor="#6E6E6E"/>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-  </ListView>
+  <StackLayout>
+    <StackLayout.Padding>
+      <OnPlatform x:TypeArguments="Thickness">
+        <OnPlatform.WinPhone>
+          <Thickness>12,0</Thickness>
+        </OnPlatform.WinPhone>
+        <OnPlatform.Android>
+          <Thickness>12,0</Thickness>
+        </OnPlatform.Android>
+      </OnPlatform>
+    </StackLayout.Padding>
+    <Grid Padding="12">
+      <Grid.IsVisible>
+        <OnPlatform x:TypeArguments="x:Boolean">
+          <OnPlatform.WinPhone>True</OnPlatform.WinPhone>
+          <OnPlatform.Android>False</OnPlatform.Android>
+          <OnPlatform.iOS>False</OnPlatform.iOS>
+        </OnPlatform>
+      </Grid.IsVisible>
+      <Label Text="{Binding Title, Source={x:Reference ContentPage}}" FontSize="48" FontFamily="Segoe WP Semilight" TextColor="#6E6E6E"/>
+    </Grid>
+
+    <ListView ItemsSource="{Binding Sessions}"
+              behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding NavigateToDetailCommand}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ImageCell
+            ImageSource="{Binding MainSpeaker.ImageUrl}"
+            Text="{Binding Title}"
+            TextColor="#00BCE5"
+            Detail="{Binding Converter={StaticResource SessionSubtitleConverter}}"
+            DetailColor="#6E6E6E"/>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
 </ContentPage>
