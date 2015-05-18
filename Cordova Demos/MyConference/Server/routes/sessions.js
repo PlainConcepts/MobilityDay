@@ -1,0 +1,17 @@
+var sessions = [
+    {id:0 , title:"Presentaci\u00f3n Plain Concepts", speaker:"Quique Mart\u00ednez", time:"10:00am", room:"Ballroom A", description: "Plain Concepts es una consultora espa\u00F1ola de software especializada en tecnolog\u00edas .NET, con presencia internacional en EE.UU., Reino Unido y Emiratos \u00c1rabes Unidos. En esta introducci\u00f3n veremos a qu\u00e9\ nos dedicamos, qui\u00e9nes componemos el equipo y c\u00f3\mo os podemos ayudar."},
+    {id:1 , title:"Visual Studio Tools for Apache Cordova", speaker:"Edu Tom\u00e0\s", time:"10:15am", room:"Ballroom B", description: "Apache Cordova es un proyecto open source que permite acceder a las APIs nativas del dispositivo (c\u00e1mara, geolocalizaci\u00f3n, contactos, etc.) y crear aplicaciones m\u00f3viles para las principales plataformas de aplicaciones. En esta sesi\u00f3n veremos c\u00f3\mo podemos construir una sola aplicaci\u00f3n para iOS, Android y Windows utilizando Visual Studio y nuestros conocimientos en est\u00e1ndares web: HTML, CSS y JavaScript."},
+    {id:2 , title:"Desarrollo de aplicaciones Cordova con AngularJS", speaker:"Alex Casquete", time:"11:00am", room:"Ballroom A", description: "Descripci\u00f3n: Uno de los beneficios del uso de Cordova es que podemos reutilizar nuestro c\u00f3digo con AngularJS para desarrollar una aplicaci\u00f3n m\u00f3vil. En esta sesi\u00f3n veremos c\u00f3\mo desarrollar una aplicaci\u00f3n Cordova con AngularJS, as\u00ed\ como las mejores pr\u00e1\cticas para obtener un mejor rendimiento. Tambi\u00e9n veremos c\u00f3\mo aprovechar la plataforma cloud de Windows Azure para crear y configurar nuestro backend utilizando Mobile Apps."},
+    {id:3 , title:"Combinando componentes Cordova con controles nativos", speaker:"Edu Tom\u00e0\s", time:"12:15pm", room:"Ballroom B", description: "Al desarrollar una aplicaci\u00f3n Cordova podemos utilizar caracter\u00ed\sticas espec\u00edficas de la UI nativa y crear o reutilizar l\u00f3\gica JavaScript mediante componentes Cordova. En esta sesi\u00f3n veremos c\u00f3\mo crear una aplicaci\u00f3n m\u00f3vil h\u00ed\brida que combina controles iOS y Android nativos con componentes Cordova, con lo que podremos aprovechar lo mejor de los dos mundos."},
+    {id:4 , title:"Extendiendo Cordova mediante plugins", speaker:"Alex Casquete", time:"13:00pm", room:"Ballroom A", description: "Cordova ofrece un puente entre JavaScript y el c\u00f3\digo nativo lo que nos permite escribir c\u00f3\digo nativo que se expone a nuestra aplicaci\u00f3n a trav\u00e9\s de una interfaz com\u00fan en JavaScript.  En esta sesi\u00f3n realizaremos una introducci\u00f3n al desarrollo de plugins para Cordova, mostrando las herramientas y los pasos necesarios para crear un plugin para Android, iOS y Windows."},
+    {id:4 , title:"Microsoft Azure", speaker:"Quique Mart\u00ednez", time:"13:45pm", room:"Ballroom A", description: "Hoy en d\u00ed\a cualquier aplicaci\u00f3n m\u00f3vil necesita de una capa de servicios para estar completa; durante esta sesi\u00f3n conoceremos c\u00f3\mo Microsoft Azure nos permite completar nuestros desarrollos m\u00f3viles a\u00F1adiendo seguridad, notificaciones, Bases de Datos y mucho m\u00e1\s. Todo \u00e9\sto para iOS, Android y Windows 10; adem\u00e1\s, veremos c\u00f3\mo se ha adaptado para trabajar tanto con Xamarin como con Cordova."}
+];
+
+exports.findAll = function (req, res, next) {
+    res.send(sessions);
+};
+
+exports.findById = function (req, res, next) {
+    var id = req.params.id;
+    res.send(sessions[id]);
+};
